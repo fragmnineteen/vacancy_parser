@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>База данных вакансий</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Список вакансий</h1>
+    
+    <div class="filters">
+        <form action="/filter_by_city" method="post" class="filter-form">
+            <label for="city">Город:</label>
+            <input type="text" id="city" name="city" required>
+            <button type="submit">Отфильтровать вакансии</button>
+        </form>
+
+        <form action="/filter_by_employer" method="post" class="filter-form">
+            <label for="employer">Работодатель:</label>
+            <input type="text" id="employer" name="employer" required>
+            <button type="submit">Отфильтровать вакансии</button>
+        </form>
+    </div>
+    
+    <h2>Vacancies:</h2>
+    <table class="vacancies-table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>URL</th>
+                <th>Employer</th>
+                <th>Salary</th>
+                <th>Area</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for vacancy in vacancies %}
+            <tr>
+                <td>{{ vacancy[0] }}</td>
+                <td>{{ vacancy[1] }}</td>
+                <td><a href="{{ vacancy[2] }}" target="_blank">{{ vacancy[2] }}</a></td>
+                <td>{{ vacancy[3] }}</td>
+                <td>{{ vacancy[4] }}</td>
+                <td>{{ vacancy[5] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    
+    <br>
+    <a href="/">Обратно ко всем найденным вакансиям</a>
+</body>
+</html>

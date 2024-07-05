@@ -1,0 +1,49 @@
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    padding: 20px;
+}
+
+h1, h2 {
+    color: #333;
+}
+
+form.filter-form {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.filters {
+    margin-bottom: 20px;
+}
+
+.vacancies-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.vacancies-table th, .vacancies-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.vacancies-table th {
+    background-color: #f2f2f2;
+    text-align: left;
+}
+
+.vacancies-table td {
+    background-color: #fff;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}

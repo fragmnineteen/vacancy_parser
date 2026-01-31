@@ -1,1 +1,1 @@
-Web app using HH API to find and filter vacancies
+Web app utilizing Flask to find and filter relevant vacancies
